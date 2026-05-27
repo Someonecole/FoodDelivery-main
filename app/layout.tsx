@@ -7,6 +7,7 @@ import { CartProvider } from "@/lib/cart-context"
 import { ThemeProvider } from "@/lib/theme-context"
 import { LanguageProvider } from "@/lib/language-context"
 import { AuthProvider } from "@/lib/auth-context"
+import { ScrollToTopButton } from "@/components/scroll-to-top-button"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +53,9 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             <AuthProvider>
-              <CartProvider>{children}</CartProvider>
+              <CartProvider>{children}
+                <ScrollToTopButton />
+              </CartProvider>
             </AuthProvider>
           </LanguageProvider>
         </ThemeProvider>
