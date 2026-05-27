@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+
+import { Header } from "@/components/header"
 import { CartProvider } from "@/lib/cart-context"
 import { ThemeProvider } from "@/lib/theme-context"
 import { LanguageProvider } from "@/lib/language-context"
@@ -53,7 +55,8 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             <AuthProvider>
-              <CartProvider>{children}
+              <CartProvider>
+                {children}
                 <ScrollToTopButton />
               </CartProvider>
             </AuthProvider>
